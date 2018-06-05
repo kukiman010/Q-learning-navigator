@@ -1,13 +1,12 @@
-#include "window.h"
-//#include <vector>
-//#include <list>
-#include <string>
+//#include "window.h"
 #include "Q_learning.h"
-using namespace Win;
+
+//using namespace Win;
 using namespace QL;
+
 int main()
 {
-	win wi;
+	//win wi;
 
 	/*list<int> arr = { 15,11,13,99,03 };/// for each
 	for (auto gg : arr)

@@ -1,16 +1,17 @@
 #pragma once
 
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 #include <SFML/Graphics.hpp>
 #include <Windows.h>
 #include <iostream>
 #include <sstream>
-#include <conio.h>
-#include <string>
+//#include <conio.h>
+//#include <string>
+#include <vector>
 //#include <time.h>
 #include <ctime>
 #include <cmath>
-
+#include <list>//I am a bad man :ñ
 
 using namespace sf;
 using namespace std;
@@ -54,5 +55,19 @@ namespace I_want_to_sleep
 		int seven_three[6] = { 5,10,6,7,8,5 };
 		int seven_four[3] = { 2,10,9 };
 		int seven_five[3] = { 2,10,12 };
+	};
+
+}
+
+namespace Tag_Types
+{
+	struct tags
+	{
+		int museums_1[3] = { 2,2,8 };
+		int monuments_2[7] = { 6,0,1,4,5,6,9 };
+		int religion[3] = { 2,3,7 };
+		int parks[5] = { 4,0,1,4,6 };
+		int art[5] = { 4,2,3,7,8 };
+		int exterior[5] = { 4,2,3,6,7 };
 	};
 }

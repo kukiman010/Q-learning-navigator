@@ -17,6 +17,7 @@ namespace QL
 		double matrix[64][17];
 		float gamma = 0.75;
 		float alpha = 0.1;
+
 	public:
 		Q_learning();
 		void initializeQ();
