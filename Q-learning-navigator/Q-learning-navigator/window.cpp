@@ -20,7 +20,7 @@ namespace Win
 
 		Font font;
 		font.loadFromFile("ubuntu.ttf");
-		Text text("", font, 14);
+		Text text("", font, 16);
 		text.setFillColor(Color::Black);//заливает текст в черный цвет 
 
 		while (window.isOpen())
@@ -640,29 +640,30 @@ namespace Win
 	void win::menu()
 	{
 		int menuNum = 0;
-		for (int i = 0; i < 6; i++)
+		for (int i = 0; i < 7; i++)
 			flag[i] = 0;
 
-		RenderWindow window(VideoMode(380, 400), "Window");
+		RenderWindow window(VideoMode(320, 470), "Window");
 
-		image but_1("button.png", 300, 50, 0, 0, 30, 30);
-		image but_2("button.png", 300, 85, 0, 0, 30, 30);
-		image but_3("button.png", 300, 120, 0, 0, 30, 30);
-		image but_4("button.png", 300, 155, 0, 0, 30, 30);
-		image but_5("button.png", 300, 190, 0, 0, 30, 30);
-		image but_6("button.png", 300, 225, 0, 0, 30, 30);
+		image but_1("button.png", 250, 24, 0, 0, 30, 30);
+		image but_2("button.png", 250, 69, 0, 0, 30, 30);
+		image but_3("button.png", 250, 114, 0, 0, 30, 30);
+		image but_4("button.png", 250, 159, 0, 0, 30, 30);
+		image but_5("button.png", 250, 204, 0, 0, 30, 30);
+		image but_6("button.png", 250, 249, 0, 0, 30, 30);
 
-		image not_but("roun2.png", 120, 290);
+		image not_but("roun2.png", 85, 320);
 
 		image but_low("b1.png");
 
-		image but_7("plus.png", 280, 275);
-		image but_8("minus.png", 35, 275);
+		image but_7("plus.png", 241, 305);
+		image but_8("minus.png", 5, 305);
+		image but_9("but_8.png", 60, 410, 0, 0, 200, 44);
 
 		Font font;
 		font.loadFromFile("SSR56__C.ttf");
 		Text text("", font, 34);
-		text.setFillColor(Color::Blue);
+		text.setFillColor(Color::Black);
 
 		Font fon;
 		fon.loadFromFile("ubuntu.ttf");
@@ -678,14 +679,16 @@ namespace Win
 					window.close();
 			}
 
-			if (IntRect(300, 50, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 1; }
-			else if (IntRect(300, 85, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 2; }
-			else if (IntRect(300, 120, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 3; }
-			else if (IntRect(300, 155, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 4; }
-			else if (IntRect(300, 190, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 5; }
-			else if (IntRect(300, 225, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 6; }
-			else if (IntRect(280, 275, 74, 94).contains(Mouse::getPosition(window))) { menuNum = 7; }
-			else if (IntRect(35, 275, 74, 94).contains(Mouse::getPosition(window))) { menuNum = 8; }
+			if (IntRect(250, 24, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 1; }
+			else if (IntRect(250, 69, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 2; }
+			else if (IntRect(250, 114, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 3; }
+			else if (IntRect(250, 159, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 4; }
+			else if (IntRect(250, 204, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 5; }
+			else if (IntRect(250, 249, 30, 30).contains(Mouse::getPosition(window))) { menuNum = 6; }
+
+			else if (IntRect(241, 305, 74, 94).contains(Mouse::getPosition(window))) { menuNum = 7; }
+			else if (IntRect(5, 305, 74, 94).contains(Mouse::getPosition(window))) { menuNum = 8; }
+			else if (IntRect(60, 410, 200, 44).contains(Mouse::getPosition(window))) { menuNum = 9; }
 			else { menuNum = 0; }
 
 			if (Mouse::isButtonPressed(Mouse::Left)) {
@@ -782,6 +785,19 @@ namespace Win
 					else
 						min -= 15;
 				}
+				if (menuNum == 9)
+				{
+					if (flag[6] == 0)
+					{
+						but_9.sprite.setTextureRect(IntRect(200, 0, 200, 44));
+						flag[6] = 1;
+					}
+					else if (flag[6] == 1)
+					{
+						but_9.sprite.setTextureRect(IntRect(0, 0, 200, 44));
+						flag[6] = 0;
+					}
+				}
 				Sleep(100);
 			}
 
@@ -795,16 +811,17 @@ namespace Win
 			window.draw(but_6.sprite);
 			window.draw(but_7.sprite);
 			window.draw(but_8.sprite);
+			window.draw(but_9.sprite);
 			window.draw(not_but.sprite);
 
 			ostringstream a, b;
-			a << "ћузеи\nѕам¤тники\n–елиги¤\nѕарки\n»скуство\nЁэкстерьер";
+			a << "Музеи\nПамятники\nРелигия\nПарки\nИскуство\nЭкстерьер";
 			b << min;
 			size.setString(b.str() + " min");
-			size.setPosition(130, 306);
+			size.setPosition(100, 335);
 
 			text.setString(a.str());
-			text.setPosition(50, 10);
+			text.setPosition(10, 10);
 			SetConsoleCP(1251);
 			SetConsoleOutputCP(1251);
 

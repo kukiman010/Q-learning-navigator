@@ -105,12 +105,20 @@ namespace QL
 				matrix[i][h] = 10;
 		}
 
-		/*for (int i = 0; i < 64; i++)
+		
+		
+		for (int i = 0; i < 64; i++)
 		{
-		for (int j = 0; j < 17; j++)
-		cout << matrix[i][j] << " ";
-		cout << endl;
-		}*/
+			for (int j = 0; j < 17; j++)
+			{
+				cout << matrix[i][j];
+				if (j == 5 || j == 6)
+					cout << "   ";
+				else
+					cout << " ";
+			}
+			cout << endl;
+		}
 
 	}
 

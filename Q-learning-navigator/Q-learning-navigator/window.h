@@ -27,7 +27,7 @@ namespace Win
 		int point, point_2, point_3;
 
 		int min;
-		bool flag[6];
+		bool flag[7];
 	public:
 		win();
 		void main();

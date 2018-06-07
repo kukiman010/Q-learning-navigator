@@ -1,7 +1,8 @@
 #pragma once
-
 #include "headers.h"
 using namespace std;
+using namespace Tag_Types;
+
 namespace QL
 {
 	class Q_learning
