@@ -1,19 +1,18 @@
 #pragma once
 
 #include "headers.h"
-//#include "View.h"
 
 namespace Players
 {
 	class player
 	{
 	private:
-		Image image;//сфмл изображение
-		Texture texture;//сфмл текстура
+		Image image;
+		Texture texture;
 		float dx, dy, speed;
 	public:
 		float x, y;
-		Sprite sprite;//сфмл спрайт
+		Sprite sprite;//Г±ГґГ¬Г« Г±ГЇГ°Г Г©ГІ
 		int retu = 0;
 	public:
 		player(String F, float X, float Y);
@@ -21,5 +20,4 @@ namespace Players
 		void motion(string b, int P_X, int P_Y, float time, int status);
 		String network_player(string b, int oto, int tot);
 	};
-
 }
