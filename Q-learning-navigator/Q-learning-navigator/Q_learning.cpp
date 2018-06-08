@@ -104,7 +104,6 @@ namespace QL
 			for (int h = 7; h < 17; h++)
 				matrix[i][h] = 10;
 		}
-
 		
 		
 		for (int i = 0; i < 64; i++)
@@ -161,6 +160,14 @@ namespace QL
 		for (int i = 0; i<10; i++)
 			output += (hidN[i] * weight_2[i]);
 		return output = sigmoid(output);
+	}
+
+	int * Q_learning::fake(int b[6])
+	{
+		
+
+		
+		return b;
 	}
 
 	Q_learning::~Q_learning()

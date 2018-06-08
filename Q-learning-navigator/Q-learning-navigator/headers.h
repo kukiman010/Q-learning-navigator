@@ -11,7 +11,7 @@
 //#include <time.h>
 #include <ctime>
 #include <cmath>
-#include <list>//I am a bad man :ñ
+//#include <list>//I am a bad man :ñ
 
 using namespace sf;
 using namespace std;

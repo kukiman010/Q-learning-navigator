@@ -12,10 +12,17 @@ int main()
 	for (auto gg : arr)
 	cout << gg << endl;*/
 
+	int y[6] = { 0,0,0,1,1,1 };
 
+	int* g = new int[6];
+	for (int i = 0; i < 6; i++)
+		g[i] = y[i];
 
 	Q_learning ql;
-	ql.initializeQ();
+	//ql.initializeQ();
+	g = ql.fake(y);
+
+	
 
 	//cout << ql.predict() << endl;
 
