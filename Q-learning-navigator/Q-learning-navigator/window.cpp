@@ -88,6 +88,10 @@ namespace Win
 			snake_1 = logic(snake_1);
 			snake_1.color_player();
 
+			//range_to_objects(snake_1.x, snake_1.y);////////////////////////////////////////////////////////////////////////////////////////
+			test(snake_1.x, snake_1.y);
+			//////////////////////////////////////////////////
+
 
 			GetPlayerView(snake_1.x, snake_1.y);
 			window.setView(view);
@@ -614,7 +618,7 @@ namespace Win
 	int win::accurate_pointer(float X, float Y)
 	{
 		int oto[12][4];
-		int min = 10000;
+		int px = 10000;
 
 
 		for (int i = 0; i < 12; i++)
@@ -629,11 +633,11 @@ namespace Win
 				oto[i][1] = Roads[i][1] - Y;
 			oto[i][2] = oto[i][0] + oto[i][1];
 
-			if (min >= oto[i][2])
-				min = oto[i][2];
+			if (px >= oto[i][2])
+				px = oto[i][2];
 		}
-		if (min < 5)
-			return min;
+		if (px < 5)
+			return px;
 		else
 			return 50;
 	}
@@ -691,86 +695,89 @@ namespace Win
 			else if (IntRect(60, 410, 200, 44).contains(Mouse::getPosition(window))) { menuNum = 9; }
 			else { menuNum = 0; }
 
-			if (Mouse::isButtonPressed(Mouse::Left)) {
-				if (menuNum == 1)
+			if (Mouse::isButtonPressed(Mouse::Left)) 
+			{
+				if (flag[6] == 0)
 				{
-					if (flag[0] == 0)
+					if (menuNum == 1)
 					{
-						but_1.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[0] = 1;
+						if (flag[0] == 0)
+						{
+							but_1.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[0] = 1;
+						}
+						else if (flag[0] == 1)
+						{
+							but_1.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[0] = 0;
+						}
 					}
-					else if (flag[0] == 1)
+					if (menuNum == 2)
 					{
-						but_1.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[0] = 0;
+						if (flag[1] == 0)
+						{
+							but_2.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[1] = 1;
+						}
+						else if (flag[1] == 1)
+						{
+							but_2.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[1] = 0;
+						}
+					}
+					if (menuNum == 3)
+					{
+						if (flag[2] == 0)
+						{
+							but_3.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[2] = 1;
+						}
+						else if (flag[2] == 1)
+						{
+							but_3.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[2] = 0;
+						}
+					}
+					if (menuNum == 4)
+					{
+						if (flag[3] == 0)
+						{
+							but_4.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[3] = 1;
+						}
+						else if (flag[3] == 1)
+						{
+							but_4.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[3] = 0;
+						}
+					}
+					if (menuNum == 5)
+					{
+						if (flag[4] == 0)
+						{
+							but_5.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[4] = 1;
+						}
+						else if (flag[4] == 1)
+						{
+							but_5.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[4] = 0;
+						}
+					}
+					if (menuNum == 6)
+					{
+						if (flag[5] == 0)
+						{
+							but_6.sprite.setTextureRect(IntRect(30, 0, 30, 30));
+							flag[5] = 1;
+						}
+						else if (flag[5] == 1)
+						{
+							but_6.sprite.setTextureRect(IntRect(0, 0, 30, 30));
+							flag[5] = 0;
+						}
 					}
 				}
-				if (menuNum == 2)
-				{
-					if (flag[1] == 0)
-					{
-						but_2.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[1] = 1;
-					}
-					else if (flag[1] == 1)
-					{
-						but_2.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[1] = 0;
-					}
-				}
-				if (menuNum == 3)
-				{
-					if (flag[2] == 0)
-					{
-						but_3.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[2] = 1;
-					}
-					else if (flag[2] == 1)
-					{
-						but_3.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[2] = 0;
-					}
-				}
-				if (menuNum == 4)
-				{
-					if (flag[3] == 0)
-					{
-						but_4.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[3] = 1;
-					}
-					else if (flag[3] == 1)
-					{
-						but_4.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[3] = 0;
-					}
-				}
-				if (menuNum == 5)
-				{
-					if (flag[4] == 0)
-					{
-						but_5.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[4] = 1;
-					}
-					else if (flag[4] == 1)
-					{
-						but_5.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[4] = 0;
-					}
-				}
-				if (menuNum == 6)
-				{
-					if (flag[5] == 0)
-					{
-						but_6.sprite.setTextureRect(IntRect(30, 0, 30, 30));
-						flag[5] = 1;
-					}
-					else if (flag[5] == 1)
-					{
-						but_6.sprite.setTextureRect(IntRect(0, 0, 30, 30));
-						flag[5] = 0;
-					}
-				}
-
 				if (menuNum == 7)
 				{
 					if (min + 15 >= 720)
@@ -815,7 +822,7 @@ namespace Win
 			window.draw(not_but.sprite);
 
 			ostringstream a, b;
-			a << "Музеи\nПамятники\nРелигия\nПарки\nИскуство\nЭкстерьер";
+			a << "Экстерьер\nИскуство\nПарки\nРелигия\nПамятники\nМузеи";
 			b << min;
 			size.setString(b.str() + " min");
 			size.setPosition(100, 335);
@@ -830,6 +837,48 @@ namespace Win
 
 			window.display();
 		}
+	}
+
+	void win::test(float x, float y)
+	{
+		//int b[6] = { 0,0,0,1,1,1 };
+
+		/*int* g = new int[6];
+		for (int i = 0; i < 6; i++)
+			g[i] = b[i];*/
+
+		QL::Q_learning ql;
+		//ql.initializeQ();
+		ql.fake(flag, range_to_objects(x, y), min);
+
+		/*for (int i = 0; i <= 11; i++)
+			cout << g[i] << " ";*/
+
+		//cout << ql.predict() << endl;
+
+	}
+
+	float* win::range_to_objects(float x, float y)
+	{
+		float cache[10];
+
+		for (int i = 0; i < 10; i++)
+		{
+			cache[i] = 0;
+			if (x >= Attraction[i][0])
+				cache[i] += x - Attraction[i][0];
+			if (x < Attraction[i][0])
+				cache[i] += Attraction[i][0] - x;
+			if (y >= Attraction[i][1])
+				cache[i] += y - Attraction[i][1];
+			if (y < Attraction[i][1])
+				cache[i] += Attraction[i][1] - y;
+
+			//cout << cache[i] << "  ";
+		}
+		//cout << "\n";
+		
+		return cache;
 	}
 	win::~win()
 	{

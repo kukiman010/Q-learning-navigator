@@ -3,6 +3,7 @@
 //#define _CRT_SECURE_NO_WARNINGS
 #include <SFML/Graphics.hpp>
 #include <Windows.h>
+//#include <algorithm>
 #include <iostream>
 #include <sstream>
 //#include <conio.h>
@@ -11,6 +12,7 @@
 //#include <time.h>
 #include <ctime>
 #include <cmath>
+#include <set>
 //#include <list>//I am a bad man :ñ
 
 using namespace sf;
@@ -59,15 +61,16 @@ namespace I_want_to_sleep
 
 }
 
-namespace Tag_Types
+
+namespace Tag_Types//I'll delete later
 {
 	struct tags
 	{
-		int museums_1[3] = { 2,2,8 };
-		int monuments_2[7] = { 6,0,1,4,5,6,9 };
-		int religion[3] = { 2,3,7 };
-		int parks[5] = { 4,0,1,4,6 };
-		int art[5] = { 4,2,3,7,8 };
-		int exterior[5] = { 4,2,3,6,7 };
+		int museums_5[3] = { 2,2,8 };
+		int monuments_4[7] = { 6,0,1,4,5,6,9 };
+		int religion_3[3] = { 2,3,7 };
+		int parks_2[5] = { 4,0,1,4,6 };
+		int art_1[5] = { 4,2,3,7,8 };
+		int exterior_0[5] = { 4,2,3,6,7 };
 	};
 }

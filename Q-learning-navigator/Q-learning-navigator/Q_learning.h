@@ -25,7 +25,7 @@ namespace QL
 		void Random_weight();
 		double sigmoid(double x);
 		double predict();
-		int* fake(int b[6]);
+		int* fake(int* b, float* distance, int time);
 		~Q_learning();
 	};
 }

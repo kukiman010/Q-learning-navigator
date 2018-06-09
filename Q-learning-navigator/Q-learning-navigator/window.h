@@ -2,6 +2,7 @@
 #include <thread>
 #include "headers.h"
 #include "player.h"
+#include "Q_learning.h"
 //#include "menu.h"
 
 using namespace Players;
@@ -27,7 +28,7 @@ namespace Win
 		int point, point_2, point_3;
 
 		int min;
-		bool flag[7];
+		int flag[7];
 	public:
 		win();
 		void main();
@@ -37,7 +38,9 @@ namespace Win
 		View GetPlayerView(int x, int y);
 		int route_search(int num, int point);
 		int accurate_pointer(float x, float y);
+		float* range_to_objects(float x, float y);
 		void menu();
+		void test(float x, float y);
 		~win();
 	};
 	class image

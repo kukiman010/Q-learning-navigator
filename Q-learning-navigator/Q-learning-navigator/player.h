@@ -12,7 +12,7 @@ namespace Players
 		float dx, dy, speed;
 	public:
 		float x, y;
-		Sprite sprite;//ñôìë ñïðàéò
+		Sprite sprite;
 		int retu = 0;
 	public:
 		player(String F, float X, float Y);

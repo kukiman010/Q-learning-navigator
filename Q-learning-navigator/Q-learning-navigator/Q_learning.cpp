@@ -105,7 +105,6 @@ namespace QL
 				matrix[i][h] = 10;
 		}
 		
-		
 		for (int i = 0; i < 64; i++)
 		{
 			for (int j = 0; j < 17; j++)
@@ -162,11 +161,40 @@ namespace QL
 		return output = sigmoid(output);
 	}
 
-	int * Q_learning::fake(int b[6])
+	int* Q_learning::fake(int* b, float* distance, int time)
 	{
-		
+		if (b[6] == 1)
+		{
+			int tag[6][7] = { { 4,2,3,6,7,0,0 },{ 4,2,3,7,8,0,0 },{ 4,0,1,4,6,0,0 },{ 2,3,7,0,0,0,0 },{ 6,0,1,4,5,6,9 },{ 2,2,8,0,0,0,0 } };
+			//The first element denotes the amount of the array in the string
 
-		
+			vector<int> list, list_2;
+
+			for (int i = 0; i < 6; i++)
+			{
+				if (b[i] == 1)
+				{
+					for (int j = 1; j <= tag[i][0]; j++)
+						list.push_back(tag[i][j]);
+				}
+			}
+			if (list.empty() == 0)
+			{
+				//sort(list.begin(), list.end());
+				set<int> b(list.begin(), list.end());
+				list.clear();
+
+				for(auto g:b)
+					cout << g << " ";
+				cout << "\n\n\n";
+
+
+			}
+
+			/*for (auto g : list)
+				cout << g << " ";
+			cout << "\n\n\n";*/
+		}
 		return b;
 	}
 
