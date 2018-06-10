@@ -78,19 +78,19 @@ namespace Win
 			if (Keyboard::isKeyPressed(Keyboard::Num9))status = 9;
 			if (Keyboard::isKeyPressed(Keyboard::Num1) && (Keyboard::isKeyPressed(Keyboard::Num0)))
 				status = 10;
-			//if (Keyboard::isKeyPressed(Keyboard::Num1) && (Keyboard::isKeyPressed(Keyboard::Num1)))
-			//status = 11;
-			if (Keyboard::isKeyPressed(Keyboard::Num0))
+			/*if (Keyboard::isKeyPressed(Keyboard::Num1) && (Keyboard::isKeyPressed(Keyboard::Num1)))
 				status = 11;
+			if (Keyboard::isKeyPressed(Keyboard::Num0))
+				status = 11;*/
 
 
 
 			snake_1 = logic(snake_1);
 			snake_1.color_player();
 
-			//range_to_objects(snake_1.x, snake_1.y);////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////
 			test(snake_1.x, snake_1.y);
-			//////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////
 
 
 			GetPlayerView(snake_1.x, snake_1.y);
@@ -841,44 +841,30 @@ namespace Win
 
 	void win::test(float x, float y)
 	{
-		//int b[6] = { 0,0,0,1,1,1 };
-
-		/*int* g = new int[6];
-		for (int i = 0; i < 6; i++)
-			g[i] = b[i];*/
-
 		QL::Q_learning ql;
 		//ql.initializeQ();
-		ql.fake(flag, range_to_objects(x, y), min);
+		range_to_objects(x, y);
+		ql.fake(flag, distance, min);
 
-		/*for (int i = 0; i <= 11; i++)
-			cout << g[i] << " ";*/
+		range_to_objects(x, y);
 
 		//cout << ql.predict() << endl;
-
 	}
 
-	float* win::range_to_objects(float x, float y)
+	void win::range_to_objects(float x, float y)
 	{
-		float cache[10];
-
 		for (int i = 0; i < 10; i++)
 		{
-			cache[i] = 0;
+			distance[i] = 0;
 			if (x >= Attraction[i][0])
-				cache[i] += x - Attraction[i][0];
+				distance[i] += x - Attraction[i][0];
 			if (x < Attraction[i][0])
-				cache[i] += Attraction[i][0] - x;
+				distance[i] += Attraction[i][0] - x;
 			if (y >= Attraction[i][1])
-				cache[i] += y - Attraction[i][1];
+				distance[i] += y - Attraction[i][1];
 			if (y < Attraction[i][1])
-				cache[i] += Attraction[i][1] - y;
-
-			//cout << cache[i] << "  ";
+				distance[i] += Attraction[i][1] - y;
 		}
-		//cout << "\n";
-		
-		return cache;
 	}
 	win::~win()
 	{

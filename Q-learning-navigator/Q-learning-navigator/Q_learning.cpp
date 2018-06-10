@@ -168,7 +168,7 @@ namespace QL
 			int tag[6][7] = { { 4,2,3,6,7,0,0 },{ 4,2,3,7,8,0,0 },{ 4,0,1,4,6,0,0 },{ 2,3,7,0,0,0,0 },{ 6,0,1,4,5,6,9 },{ 2,2,8,0,0,0,0 } };
 			//The first element denotes the amount of the array in the string
 
-			vector<int> list, list_2;
+			vector<int> list;
 
 			for (int i = 0; i < 6; i++)
 			{
@@ -178,16 +178,36 @@ namespace QL
 						list.push_back(tag[i][j]);
 				}
 			}
+
+
 			if (list.empty() == 0)
 			{
 				//sort(list.begin(), list.end());
 				set<int> b(list.begin(), list.end());
+
+				vector<int> list_2(b.size(),0);
+				int l = 0;
+				for (auto g : b)
+				{
+					for (int j = 0; j < list.size(); j++)
+						if (g == list[j])
+							list_2[l]+=1;
+					l++;
+				}
 				list.clear();
+				
 
-				for(auto g:b)
+				for (auto g : b)
+				cout << g << " ";
+				cout << "\n";
+
+				for (int g: list_2)
 					cout << g << " ";
-				cout << "\n\n\n";
+				cout << endl;
 
+				for (auto g : b)
+					cout << distance[g] << " ";
+				cout << "\n\n\n";
 
 			}
 
