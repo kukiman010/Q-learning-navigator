@@ -84,14 +84,25 @@ namespace Win
 				status = 11;*/
 
 
+			////////////////////////////////////////////////////////////////////////////////////////
+			if (flag[6] == 1)
+				test(snake_1.x, snake_1.y);
+
+			for (int i = 0; i < 10; i++)
+				cout << queue[i] << "  ";
+			cout << "\n\n";
+
+
+			if (flag[6] == 1)
+				test_2(snake_1.x, snake_1.y);
+			////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 			snake_1 = logic(snake_1);
 			snake_1.color_player();
 
-			////////////////////////////////////////////////////////////////////////////////////////
-			test(snake_1.x, snake_1.y);
-			////////////////////////////////////////////////////////////////////////////////////////
-
+			
 
 			GetPlayerView(snake_1.x, snake_1.y);
 			window.setView(view);
@@ -242,6 +253,14 @@ namespace Win
 		for (int i = 0; i < 12; i++)
 			for (int j = 0; j < 2; j++)
 				Roads[i][j] = tot[i][j];
+
+
+
+		glag_2 = 0;
+		glag_3 = 0;
+		for (int i = 0; i < 11; i++)
+			queue[i] = 99;
+
 	}
 	int win::swap_point(float X, float Y)
 	{
@@ -803,9 +822,14 @@ namespace Win
 					{
 						but_9.sprite.setTextureRect(IntRect(0, 0, 200, 44));
 						flag[6] = 0;
+
+						glag_2 = 0;
+						for (int i = 0; i < 10; i++)
+							queue[i] = 99;
+						status = 99;
 					}
 				}
-				Sleep(100);
+				Sleep(150);
 			}
 
 			window.clear();
@@ -844,9 +868,10 @@ namespace Win
 		QL::Q_learning ql;
 		//ql.initializeQ();
 		range_to_objects(x, y);
-		ql.fake(flag, distance, min);
-
-		range_to_objects(x, y);
+		//queue = 
+		queue = ql.fake(flag, distance, min);
+		
+		//range_to_objects(x, y);
 
 		//cout << ql.predict() << endl;
 	}
@@ -865,6 +890,21 @@ namespace Win
 			if (y < Attraction[i][1])
 				distance[i] += Attraction[i][1] - y;
 		}
+	}
+	void win::test_2(float x, float y)
+	{
+		if (queue[glag_2] == 99)
+			return;
+
+		/*int m = glag_2;
+		m += 1*/;
+		status = queue[glag_2]+1;
+
+		if (x == Attraction[queue[glag_2]][0] && y == Attraction[queue[glag_2]][1])
+		{
+			glag_2++;
+		}
+
 	}
 	win::~win()
 	{

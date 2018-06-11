@@ -31,6 +31,10 @@ namespace Win
 		int flag[7];
 
 		float distance[10];
+		int* queue = new int[11];
+
+		int glag_2, glag_3;
+
 	public:
 		win();
 		void main();
@@ -43,6 +47,8 @@ namespace Win
 		void range_to_objects(float x, float y);
 		void menu();
 		void test(float x, float y);
+
+		void test_2(float x, float y);
 		~win();
 	};
 	class image

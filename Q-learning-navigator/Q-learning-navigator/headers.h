@@ -18,6 +18,8 @@
 using namespace sf;
 using namespace std;
 
+//int hhhh = 0;
+
 namespace I_want_to_sleep
 {
 	struct Im_stupid

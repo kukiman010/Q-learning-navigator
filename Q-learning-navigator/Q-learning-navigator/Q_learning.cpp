@@ -163,14 +163,12 @@ namespace QL
 
 	int* Q_learning::fake(int* b, float* distance, int time)
 	{
-		if (b[6] == 1)
-		{
-			int tag[6][7] = { { 4,2,3,6,7,0,0 },{ 4,2,3,7,8,0,0 },{ 4,0,1,4,6,0,0 },{ 2,3,7,0,0,0,0 },{ 6,0,1,4,5,6,9 },{ 2,2,8,0,0,0,0 } };
-			//The first element denotes the amount of the array in the string
+		int tag[6][7] = { { 4,2,3,6,7,0,0 },{ 4,2,3,7,8,0,0 },{ 4,0,1,4,6,0,0 },{ 2,3,7,0,0,0,0 },{ 6,0,1,4,5,6,9 },{ 2,2,8,0,0,0,0 } };
+		//The first element denotes the amount of the array in the string
 
-			vector<int> list;
+		vector<int> list;
 
-			for (int i = 0; i < 6; i++)
+		for (int i = 0; i < 6; i++)
 			{
 				if (b[i] == 1)
 				{
@@ -180,42 +178,68 @@ namespace QL
 			}
 
 
-			if (list.empty() == 0)
-			{
-				//sort(list.begin(), list.end());
-				set<int> b(list.begin(), list.end());
+		if (list.empty() == 0)
+		{
+			//sort(list.begin(), list.end());
+			const set<int> b(list.begin(), list.end());
 
-				vector<int> list_2(b.size(),0);
-				int l = 0;
-				for (auto g : b)
+			vector<int> list_2(b.size(),0);
+			int l = 0;
+			for (auto g : b)
 				{
 					for (int j = 0; j < list.size(); j++)
 						if (g == list[j])
 							list_2[l]+=1;
 					l++;
 				}
-				list.clear();
-				
+			list.clear();
 
-				for (auto g : b)
+			//hhhh = b.size();
+
+			/*for (auto g : b)
 				cout << g << " ";
-				cout << "\n";
+			cout << "\n";
 
-				for (int g: list_2)
-					cout << g << " ";
-				cout << endl;
-
-				for (auto g : b)
-					cout << distance[g] << " ";
-				cout << "\n\n\n";
-
-			}
-
-			/*for (auto g : list)
+			for (int g: list_2)
 				cout << g << " ";
+			cout << endl;
+
+			for (auto g : b)
+				cout << distance[g] << " ";
 			cout << "\n\n\n";*/
+
+
+
+			int *oh=new int[10];
+			for (int i = 0; i < 10; i++)
+				oh[i] = 99;
+
+			int p = 0;
+			for (int g : b)
+			{
+				oh[p] = g;
+				p++;
+			}
+			
+
+			/*for (int i = 0; i < b.size(); i++)
+			{
+				if ()
+				{
+
+				}
+			}*/
+			return oh;
+
 		}
-		return b;
+
+		/*for (auto g : list)
+			cout << g << " ";
+		cout << "\n\n\n";*/
+		int ll[10];
+		for (int i = 0; i < 10; i++)
+			ll[i] = 99;
+		return ll;
 	}
 
 	Q_learning::~Q_learning()

@@ -26,6 +26,7 @@ namespace QL
 		double sigmoid(double x);
 		double predict();
 		int* fake(int* b, float* distance, int time);
+		
 		~Q_learning();
 	};
 }

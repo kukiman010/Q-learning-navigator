@@ -34,8 +34,8 @@ namespace Players
 		}
 		else if (b == "TELEPORT")
 		{
-			x = 563;
-			y = 290;
+			x = 1562; 
+			y = 957;
 			sprite.setPosition(x, y);
 			return;
 		}
