@@ -19,6 +19,12 @@ namespace QL
 		float gamma = 0.75;
 		float alpha = 0.1;
 
+		double explorationConst = 300;
+		double r = 0.0;
+		double lookAheadValue = 0.0;
+		double sample = 0.0;
+		double theta2Min = 90.0;
+
 	public:
 		Q_learning();
 		void initializeQ();

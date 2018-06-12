@@ -194,7 +194,6 @@ namespace QL
 				}
 			list.clear();
 
-			//hhhh = b.size();
 
 			/*for (auto g : b)
 				cout << g << " ";
@@ -220,15 +219,6 @@ namespace QL
 				oh[p] = g;
 				p++;
 			}
-			
-
-			/*for (int i = 0; i < b.size(); i++)
-			{
-				if ()
-				{
-
-				}
-			}*/
 			return oh;
 
 		}

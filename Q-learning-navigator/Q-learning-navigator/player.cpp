@@ -56,50 +56,9 @@ namespace Players
 			speed = 0.1; dx = speed; dy = 0;
 		}
 
-		//if ((x - P_X) < 1 && (status > 0 && status < 12))
-		//{
-		//	if (b == "RIGHT")
-		//	{
-		//		
-		//		dx = 0;
-		//		cout << "12345" << endl;
-		//	}
-		//}
-		//if ((x - P_X) < 1 && (status > 0 && status < 12))///////////////////////                           Ќ≈      ”ƒјЋя“№!!!!!!!!!!!!!!
-		//{
-		//	if (b == "LEFT")
-		//	{
-		//		dx = 0; 
-		//		cout << "12345" << endl;
-		//	}
-		//}
-		//if ((P_Y - y) < 1 && (status > 0 && status < 12))
-		//{
-		//	if (b == "UP")
-		//	{
-		//		dy = 0;
-		//		cout << "12345" << endl;
-		//	}
-		//}
-		//if ((P_Y - y) < 1 && (status > 0 && status < 12))///////////////////////                           Ќ≈      ”ƒјЋя“№!!!!!!!!!!!!!!
-		//{
-		//	if (b == "DOWN")
-		//	{
-		//		dy = 0;
-		//		cout << "12345" << endl;
-		//	}
-		//}
-		//else
-		/*if (x == P_X && y == P_Y)
-		{
-		dx = 0;
-		dy = 0;
-		}
-		else
-		{*/
+		
 		x += dx * time;
 		y += dy * time;
-		//}
 
 		//cout << P_X << "  " << P_Y << endl;
 		speed = 0;
@@ -119,9 +78,17 @@ namespace Players
 					x += P_X - x;
 			}
 		}
+		else if (P_Y > y)
+		{
+			if ((P_Y - y) < 1)
+			{
+				if (b == "DOWN")
+					y += P_Y - y;
+			}
+		}
 		else if (P_X < x)
 		{
-			if ((x - P_X) < 1)///////////////////////                           Ќ≈      ”ƒјЋя“№!!!!!!!!!!!!!!
+			if ((x - P_X) < 1)
 			{
 				if (b == "LEFT")
 					x -= x - P_X;
@@ -133,14 +100,6 @@ namespace Players
 			{
 				if (b == "UP")
 					y -= y - P_Y;
-			}
-		}
-		else if (P_Y > y)
-		{
-			if ((P_Y - y) < 1)///////////////////////                           Ќ≈      ”ƒјЋя“№!!!!!!!!!!!!!!
-			{
-				if (b == "DOWN")
-					y += P_Y - y;
 			}
 		}
 
