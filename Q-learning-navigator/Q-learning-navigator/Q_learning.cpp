@@ -161,7 +161,7 @@ namespace QL
 		return output = sigmoid(output);
 	}
 
-	int* Q_learning::fake(int* b, float* distance, int time)
+	int* Q_learning::imitation(int* b, float* distance, int time)
 	{
 		int tag[6][7] = { { 4,2,3,6,7,0,0 },{ 4,2,3,7,8,0,0 },{ 4,0,1,4,6,0,0 },{ 2,3,7,0,0,0,0 },{ 6,0,1,4,5,6,9 },{ 2,2,8,0,0,0,0 } };
 		//The first element denotes the amount of the array in the string

@@ -16,9 +16,10 @@ namespace QL
 		double weight_2[10];
 
 		double matrix[64][17];
+
+
 		float gamma = 0.75;
 		float alpha = 0.1;
-
 		double explorationConst = 300;
 		double r = 0.0;
 		double lookAheadValue = 0.0;
@@ -31,7 +32,7 @@ namespace QL
 		void Random_weight();
 		double sigmoid(double x);
 		double predict();
-		int* fake(int* b, float* distance, int time);
+		int* imitation(int* b, float* distance, int time);
 		
 		~Q_learning();
 	};

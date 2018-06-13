@@ -869,7 +869,7 @@ namespace Win
 		//ql.initializeQ();
 		range_to_objects(x, y);
 		//queue = 
-		queue = ql.fake(flag, distance, min);
+		queue = ql.imitation(flag, distance, min);
 		
 		//range_to_objects(x, y);
 
