@@ -25,8 +25,8 @@ namespace Win
 
 		while (window.isOpen())
 		{
-			time_window = clock.getElapsedTime().asMicroseconds(); //дать прошедшее врем¤ в микросекундах
-			clock.restart(); //перезагружает врем¤
+			time_window = clock.getElapsedTime().asMicroseconds(); //дать прошедшее время в микросекундах
+			clock.restart(); //перезагружает врем
 			time_window = time_window / 500;//скорость игры
 
 
@@ -78,10 +78,6 @@ namespace Win
 			if (Keyboard::isKeyPressed(Keyboard::Num9))status = 9;
 			if (Keyboard::isKeyPressed(Keyboard::Num1) && (Keyboard::isKeyPressed(Keyboard::Num0)))
 				status = 10;
-			/*if (Keyboard::isKeyPressed(Keyboard::Num1) && (Keyboard::isKeyPressed(Keyboard::Num1)))
-				status = 11;
-			if (Keyboard::isKeyPressed(Keyboard::Num0))
-				status = 11;*/
 
 
 			////////////////////////////////////////////////////////////////////////////////////////

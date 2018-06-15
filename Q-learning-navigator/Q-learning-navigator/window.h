@@ -3,10 +3,8 @@
 #include "headers.h"
 #include "player.h"
 #include "Q_learning.h"
-//#include "menu.h"
 
 using namespace Players;
-//using namespace MENU;
 
 namespace Win
 {
